@@ -1,4 +1,4 @@
-# An Intro to `R`/`Tidyverse`
+# Back to Basics: Intro to R and Data Wrangling with Transcriptomics
 
 [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 
@@ -7,23 +7,16 @@
 Objectives](https://github.com/jananiravi/workshop-tidyverse/#learning-objectives)
 \| [Setup](https://github.com/jananiravi/workshop-tidyverse/#setup) \|
 [Credits](https://github.com/jananiravi/workshop-tidyverse/#credits) \|
-[Contact](https://github.com/jananiravi/workshop-tidyverse/#contact) \|
 [Additional
 Resources](https://github.com/jananiravi/workshop-tidyverse/#additional-resources)
 
-### Next workshop
+## Lead co-organizers and speakers
+[Abhirupa Ghosh, PhD](https://github.com/AbhirupaGhosh) & [Kewalin Samart](https://github.com/KewalinSamart)
 
--   TBD
+## Today's sponsor
+[The Gignoux Lab](https://www.gignouxlab.org/), Department of Biomedical Informatics, University of Colorado Anschutz Medical Campus
 
-### Past workshops
-
-[Videos](https://github.com/jananiravi/workshop-tidyverse/tree/master/videos)
-- 2022: [International Society for Computational Biology, ISCB Academy
-Tutorial](https://www.iscb.org/iscbacademy)
-- 2021: R-Ladies Tunis, Africa - 2021: R-Ladies Bangalore, India
-- 2019: Indian Institute of Technology Madras (IITM) Chennai, India (w/ Praveena Mathews)
-- 2019--2022: PBGB R seminar course (Spring of '19, '20, '22), Michigan State University
-- Other related ones: [R-Ladies East Lansing](https://github.com/rladies-eastlansing)
+“We are statistical and population geneticists interested in the confluence of epidemiology, AI and evolution. We use simulations, new methods, and large-scale datasets to improve personalized medicine. We are interested in improving risk prediction across the spectrum of diversity of human populations, integrating insights from functional genomics, and identifying the clinical and translational potential of modern genomics.” 
 
 ------------------------------------------------------------------------
 
@@ -132,7 +125,7 @@ IDE](https://www.rstudio.com/products/rstudio/download/#download).
 ## Credits
 
 [Arjun Krishnan](https://thekrishnanlab.org) and
-[I](https://jravilab.github.io) co-developed the content for the
+[Janani Ravi](https://jravilab.github.io) co-developed the content for the
 transcriptomics part for this workshop; [R-Ladies East
 Lansing](https://rladies-eastlansing.github.io) members (Kayla J,
 Nafiseh H, Veronica F, Cara F, Camille A) and I helped with the
@@ -159,21 +152,6 @@ This work is licensed under a BSD-3-Clause License.
 -   If you would like to suggest/contribute to this project, feel free
     to open a issue 💟
 -   Please follow our contributing guidelines (coming soon!).
-
-## Contact
-
--   Webpage: [jravilab.github.io](https://jravilab.github.io) \|
-    [thekrishnanlab.org](https://thekrishnanlab.org) \|
-    [github.com/rladies-eastlansing](https://github.com/rladies-eastlansing)
--   Email: [janani\@msu.edu](mailto:janani@msu.edu){.email} \|
-    [arjun\@msu.edu](mailto:arjun@msu.edu){.email} \|
-    [eastlansing\@rladies.org](mailto:eastlansing@rladies.org){.email}
--   Twitter: [\@janani137](https://twitter.com/janani137) \|
-    [\@compbiologist](https://twitter.com/compbiologist) \|
-    [\@RLadiesELansing](https://twitter.com/RLadiesELansing)
--   GitHub: [\@jananiravi](https://github.com/jananiravi) \|
-    [\@arjunkrish](https://github.com/arjunkrish) \|
-    [\@RLadies-EastLansing](https://github.com/rladies-eastlansing)
 
 ------------------------------------------------------------------------
 
