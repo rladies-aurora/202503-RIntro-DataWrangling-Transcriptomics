@@ -128,7 +128,7 @@ IDE](https://www.rstudio.com/products/rstudio/download/#download).
 [Janani Ravi](https://jravilab.github.io) co-developed the content for the
 transcriptomics part for this workshop; [R-Ladies East
 Lansing](https://rladies-eastlansing.github.io) members (Kayla J,
-Nafiseh H, Veronica F, Cara F, Camille A) and I helped with the
+Nafiseh H, Veronica F, Cara F, Camille A) and Janani Ravi helped with the
 gapminder material.
 
 ### Acknowledgements
