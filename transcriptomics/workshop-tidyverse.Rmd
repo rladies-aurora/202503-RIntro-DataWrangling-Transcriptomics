@@ -5,13 +5,13 @@ description: |
 author:
   - name: Janani Ravi
     url: https://jravilab.github.io
-    affiliation: PDI, MMG, MSU | R-Ladies East Lansing
-    affiliation_url: https://github.com/rladies-eastlansing
+    affiliation: DBMI, CU Anschutz, R-Ladies Aurora
+    affiliation_url: https://github.com/rladies-aurora
     orcid_id: 0000-0001-7443-925X
   - name: Arjun Krishnan
     url: https://thekrishnanlab.org
-    affiliation: CMSE & BMB, MSU
-    affiliation_url: https://cmse.msu.edu/
+    affiliation: DBMI, CU Anschutz
+    affiliation_url: https://medschool.cuanschutz.edu/dbmi
     orcid_id: 0000-0002-7980-4110
 date: "`r Sys.Date()`"
 citation_url: https://github.com/jananiravi/workshop-tidyverse
@@ -44,19 +44,19 @@ knitr::opts_chunk$set(
 )
 ```
 
-### About me
-I am a computational biologist, an Asst. Professor in the departments of Pathobiology & Diagnostic Investigation and Microbiology & Molecular Genetics at Michigan State University.
-In our group, we develop computational approaches to understand infectious disease biology.
-Check out my [webpage](https://jravilab.github.io) for more info.
-You can reach me [here](https://jravilab.github.io/#contact).
+### About Janani
+Janani is a computational biologist, an Asst. Professor in the departments of Biomedical Informatics, CU Anschutz
+In her group, they develop computational approaches to understand infectious disease biology.
+Check out her [webpage](https://jravilab.github.io) for more info.
+You can reach her [here](https://jravilab.github.io/#contact).
 
-I'm also the founder & co-organizer of the [R-Ladies East Lansing](https://rladies-eastlansing.github.io), Women+ Data Science, and AsiaR.
-We conduct R and data science related meetups & workshops regularly!
-So, do check out our upcoming events on [Meetup](https://meetup.com/rladies-eastlansing/events).
+She's also the founder & co-organizer of the [R-Ladies Aurora](https://www.meetup.com/rladies-aurora/), [R-Ladies East Lansing](https://rladies-eastlansing.github.io), Women+ Data Science, and AsiaR.
+They conduct R and data science related meetups & workshops regularly!
+So, do check out our upcoming events on [Meetup](https://www.meetup.com/rladies-aurora/events/).
 
 # Part 1: Getting Started w/ `readr`
-You can access all relevant material pertaining to this workshop [here](https://github.com/jananiravi/workshop-tidyverse).
-Other related workshops & useful [cheatsheets](http://github.com/jananiravi/cheatsheets).
+You can access all relevant material pertaining to this workshop [here](https://github.com/rladies-aurora/202503-RIntro-DataWrangling-Transcriptomics).
+Other related workshops & useful [cheatsheets](https://github.com/rladies-aurora/cheatsheets).
 
 ## Installation and set-up
 ### Install RStudio
@@ -123,7 +123,7 @@ library(here) # https://github.com/jennybc/here_here
 ```
 
 ## Some useful cheatsheets
-[Cheatsheets \@RStudio](https://www.rstudio.com/resources/cheatsheets/) | [Our cheatsheets repo](https://github.com/jananiravi/cheatsheets)
+[Cheatsheets \@RStudio](https://www.rstudio.com/resources/cheatsheets/) | [Our cheatsheets repo](https://github.com/rladies-aurora/cheatsheets)
 
 More resources towards the [end of the document](#refs).
 
@@ -793,8 +793,8 @@ write_delim(x=my_newly_formatted_data,
 - GitHub: [\@jananiravi](https://github.com/jananiravi) | [\@arjunkrish](https://github.com/arjunkrish)
 
 ## Additional resources {#refs}
-- You can access all relevant material pertaining to this workshop [here](https://github.com/jananiravi/workshop-tidyverse).
-- Other related [R-Ladies East Lansing workshops](http://github.com/rladies-eastlansing/meetup-presentations) & useful [cheatsheets](http://github.com/jananiravi/cheatsheets).
+- You can access all relevant material pertaining to this workshop [here](https://github.com/rladies-aurora/202503-RIntro-DataWrangling-Transcriptomics).
+- Other related [R-Ladies Aurora workshops](https://github.com/rladies-aurora) & useful [cheatsheets](https://github.com/rladies-aurora/cheatsheets).
 - [Computational biology gists](https://github.com/jananiravi/compbio-gists)
 - [Data-to-viz.com](https://www.data-to-viz.com) and [R Graph Gallery](https://r-graph-gallery.com)
 
