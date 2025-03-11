@@ -31,10 +31,13 @@ output:
       collapsed: yes
       smooth_scroll: yes
 editor_options:
-  chunk_output_type: console
+  chunk_output_type: inline
+  markdown: 
+    wrap: sentence
 always_allow_html: true
 ---
-```{r setup, include=FALSE}
+
+```{r setup, include=TRUE}
 knitr::opts_chunk$set(
   echo = TRUE,
   warning = TRUE,
@@ -45,8 +48,9 @@ knitr::opts_chunk$set(
 ```
 
 ### About Janani
-Janani is a computational biologist, an Asst. Professor in the departments of Biomedical Informatics, CU Anschutz
-In her group, they develop computational approaches to understand infectious disease biology.
+
+Janani is a computational biologist, an Asst.
+Professor in the departments of Biomedical Informatics, CU Anschutz In her group, they develop computational approaches to understand infectious disease biology.
 Check out her [webpage](https://jravilab.github.io) for more info.
 You can reach her [here](https://jravilab.github.io/#contact).
 
@@ -55,50 +59,49 @@ They conduct R and data science related meetups & workshops regularly!
 So, do check out our upcoming events on [Meetup](https://www.meetup.com/rladies-aurora/events/).
 
 # Part 1: Getting Started w/ `readr`
+
 You can access all relevant material pertaining to this workshop [here](https://github.com/rladies-aurora/202503-RIntro-DataWrangling-Transcriptomics).
 Other related workshops & useful [cheatsheets](https://github.com/rladies-aurora/cheatsheets).
 
 ## Installation and set-up
-### Install RStudio
-*Running RStudio locally?*
-[**Download RStudio**](http://rstudio.com/download)
 
-*Want to try the latest 'Preview' version of RStudio?*
-[**RStudio Preview version**]((https://www.rstudio.com/products/rstudio/download/preview/))
+### Install RStudio
+
+*Running RStudio locally?* [**Download RStudio**](http://rstudio.com/download)
+
+*Want to try the latest 'Preview' version of RStudio?* [**RStudio Preview version**]((https://www.rstudio.com/products/rstudio/download/preview/))
 
 *Trouble with local installation?* Login & start using [**RStudio Cloud**](https://rstudio.cloud) right away!
 
-*New to RStudio IDE?*
-Use Help [Page #1](https://www.rstudio.com/products/rstudio/#Desktop) &
-[Page #2](https://www.rstudio.com/products/rstudio/features/)
-
+*New to RStudio IDE?* Use Help [Page #1](https://www.rstudio.com/products/rstudio/#Desktop) & [Page #2](https://www.rstudio.com/products/rstudio/features/)
 
 ### Install R
-*... if you haven't already!*
-The RStudio startup message should specify your current local version of R.
-For _e.g.,_ `R v4.1.2`
 
-- [Download R](https://cran.r-project.org)
-- [*Update to the latest version of R?*](https://www.linkedin.com/pulse/3-methods-update-r-rstudio-windows-mac-woratana-ngarmtrakulchol)
-- [A Windows-specific solution to updating R](https://www.r-statistics.com/2015/06/a-step-by-step-screenshots-tutorial-for-upgrading-r-on-windows/)
+*... if you haven't already!* The RStudio startup message should specify your current local version of R.
+For *e.g.,* `R v4.1.2`
+
+-   [Download R](https://cran.r-project.org)
+-   [*Update to the latest version of R?*](https://www.linkedin.com/pulse/3-methods-update-r-rstudio-windows-mac-woratana-ngarmtrakulchol)
+-   [A Windows-specific solution to updating R](https://www.r-statistics.com/2015/06/a-step-by-step-screenshots-tutorial-for-upgrading-r-on-windows/)
 
 ### Install packages
-- **Install**: once
-- **Load**: each time
+
+-   **Install**: once
+-   **Load**: each time
 
 ```{r installation, eval=F, echo=T}
 install.packages("tidyverse")   # for data wrangling
 install.packages("here")        # to set paths relative to your current project.
 # install.packages("gapminder") # sample dataset
 ```
-Explore the [RLEL workshops](https://github.com/rladies-eastlansing/meetup-presentations) for more examples and sample codes for Tidy Data and DataViz [_e.g.,_ >> `presentations/20181105-workshop-tidydata` uses the `gapminder` & `USArrests` datasets].
 
+Explore the [RLEL workshops](https://github.com/rladies-eastlansing/meetup-presentations) for more examples and sample codes for Tidy Data and DataViz [*e.g.,* \>\> `presentations/20181105-workshop-tidydata` uses the `gapminder` & `USArrests` datasets].
 
 **Trouble installing tidyverse?**
 
-- Check your R/RStudio versions
-- For the time-being install the individual packages using `install.packages("PACKAGENAME")`
-- Check out the whole `tidyverse` suite of packages [here](https://www.tidyverse.org/packages/)
+-   Check your R/RStudio versions
+-   For the time-being install the individual packages using `install.packages("PACKAGENAME")`
+-   Check out the whole `tidyverse` suite of packages [here](https://www.tidyverse.org/packages/)
 
 ```{r tidyverse, eval=FALSE, echo=TRUE}
 # If tidyverse installation fails, install individual constituent packages this way...
@@ -110,6 +113,7 @@ install.packages("readxl")   # Importing excel files
 ```
 
 ### Loading packages
+
 ```{r loading, eval=T, echo=TRUE}
 library(tidyverse)
 # OR load the individual packages, if you have trouble installing/loading `tidyverse`
@@ -123,16 +127,17 @@ library(here) # https://github.com/jennybc/here_here
 ```
 
 ## Some useful cheatsheets
-[Cheatsheets \@RStudio](https://www.rstudio.com/resources/cheatsheets/) | [Our cheatsheets repo](https://github.com/rladies-aurora/cheatsheets)
+
+[Cheatsheets \@RStudio](https://www.rstudio.com/resources/cheatsheets/) \| [Our cheatsheets repo](https://github.com/rladies-aurora/cheatsheets)
 
 More resources towards the [end of the document](#refs).
 
 ## Data import
 
-- `read_csv`, `write_csv`
-- `read_tsv`, `write_tsv`
-- `read_delim`, `write_delim`
-- `here::here`
+-   `read_csv`, `write_csv`
+-   `read_tsv`, `write_tsv`
+-   `read_delim`, `write_delim`
+-   `here::here`
 
 ```{r data-import, eval=T, echo=TRUE}
 here::here() # where you opened your RStudio session/Project
@@ -161,14 +166,14 @@ read_excel(path="path/to/excel.xls",
 read_tsv(file=here("transcriptomics/GSE69360_RNAseq.counts.txt"), col_names=T)
 ```
 
-
 ## Knowing your data
+
 *Dataset details*:
 
-- AA: Agilent Adult; AF: Agilent Fetus
-- BA: BioChain Adult; BF: BioChain Fetus
-- OA: OriGene Adult
-- Tissues: Colon, Heart, Kidney, Liver, Lung, Stomach
+-   AA: Agilent Adult; AF: Agilent Fetus
+-   BA: BioChain Adult; BF: BioChain Fetus
+-   OA: OriGene Adult
+-   Tissues: Colon, Heart, Kidney, Liver, Lung, Stomach
 
 ```{r data-structure, echo=TRUE, eval=F}
 str(gse69360)              # Structure of the dataframe
@@ -187,7 +192,7 @@ gse69360[1:5,7:10]         # Subsetting a dataframe
 write_tsv(gse69360[1:100,7:12], "gse_subset.txt")
 ```
 
-```{r kable, layout="l-body-outset"}
+```{r kable, layout="l-body-outset", results="asis"}
 library(knitr)
 kable(head(gse69360))
 ```
@@ -197,8 +202,10 @@ library(rmarkdown)
 paged_table(gse69360)
 ```
 
-***
+------------------------------------------------------------------------
+
 # Part 2: Reshaping data w/ `tidyr`
+
 ```{r tidyr, echo=TRUE, eval=FALSE}
 ## legacy tidyverse functions
 gather()   # Gather COLUMNS -> ROWS
@@ -214,8 +221,9 @@ unite()    # Unite several COLUMNS -> 1 COLUMN
 ```
 
 ## Gather, Spread
-- `gather`: *Gather columns into key-value pairs. Wide -> Long*
-- `spread`: *Spread a key-value pair across multiple columns: Long -> Wide*
+
+-   `gather`: *Gather columns into key-value pairs. Wide -\> Long*
+-   `spread`: *Spread a key-value pair across multiple columns: Long -\> Wide*
 
 ```{r gather-spread, echo=T, eval=T}
 # Gather all columns except 'Geneid'
@@ -233,33 +241,35 @@ gse69360 %>%
   pivot_wider(names_from="Sample", values_from="Counts")
 ```
 
-
 ## Unite, Separate
-- `unite`:    *Unite multiple columns into one*
-- `separate`: *Separate one column into multiple columns*
+
+-   `unite`: *Unite multiple columns into one*
+-   `separate`: *Separate one column into multiple columns*
 
 ```{r separate-unite, echo=T, eval=T}
 gse69360 %>%
-  select(Geneid, matches("[AF]_")) %>%               # selecting only Counts columns
+  select(Geneid, starts_with("AF")) %>%               # selecting only Counts columns
   pivot_longer(cols=matches("[AF]_"), names_to="Sample", values_to="Counts") %>% # wide -> long
   separate(Sample, into=c("Source_Stage", "Tissue"), sep="_") # separate logically
 
 gse69360 %>%
-  select(Geneid, matches("[AF]_")) %>%
+  select(Geneid, starts_with("AF")) %>%
   pivot_longer(cols=matches("[AF]_"), names_to="Sample", values_to="Counts") %>%
   separate(Sample, into=c("Source_Stage", "Tissue"), sep="_") %>%
   separate(Source_Stage, into=c("Source", "Stage"), sep=1) # separate by char position
 
 gse69360 %>%
-  select(Geneid, matches("[AF]_")) %>%
+  select(Geneid, starts_with("AF")) %>%
   pivot_longer(cols=matches("[AF]_"), names_to="Sample", values_to="Counts") %>%
   separate(Sample, into=c("Source_Stage", "Tissue"), sep="_") %>%
   separate(Source_Stage, into=c("Source", "Stage"), sep=1) %>%
   unite(Stage_Tissue, Stage, Tissue) # combining a different set of columns
 ```
 
-***
+------------------------------------------------------------------------
+
 # Part 3: Data wranging with `dplyr`
+
 ```{r dplyr, echo=TRUE, eval=FALSE}
 conflicted::conflict_prefer(name="filter", winner="dplyr")
 filter()    # PICK observations by their values | ROWS
@@ -272,7 +282,8 @@ group_by()  # GROUP data into rows with the same value of variable (COLUMN)
 ```
 
 ## Filter
-- `filter`: *Return rows with matching conditions*
+
+-   `filter`: *Return rows with matching conditions*
 
 ```{r filter, echo=TRUE, eval=TRUE}
 head(gse69360) # Snapshot of the dataframe
@@ -295,12 +306,13 @@ gse69360 %>%
 ```
 
 ## Select
-- `select`: *Select/rename variables/columns by name*
+
+-   `select`: *Select/rename variables/columns by name*
 
 ```{r select, echo=T, eval=T}
 # Selecting columns that match a pattern
 gse69360 %>%
-  select(Geneid, matches(".F_"))
+  select(Geneid, matches(".F_")) #%>% View()
 
 # Excluding specific columns
 gse69360 %>%
@@ -316,10 +328,10 @@ gse69360 %>%
   filter(grepl("chrY", Chr) | Length <= 100)
 ```
 
-
 ## Mutate
-- `mutate`: *Adds new variables; keeps existing variables*
-- `transmute`: *Adds new variables; drops existing variables*
+
+-   `mutate`: *Adds new variables; keeps existing variables*
+-   `transmute`: *Adds new variables; drops existing variables*
 
 ```{r mutate, echo=T, eval=T}
 # Excluding columns matching a condition
@@ -355,8 +367,9 @@ gene_loc %>%
 ```
 
 ## Distinct & Arrange
-- `distinct`: *Pick unique entries*
-- `arrange`: *Arrange rows by variables*
+
+-   `distinct`: *Pick unique entries*
+-   `arrange`: *Arrange rows by variables*
 
 ```{r arrange, echo=TRUE, eval=TRUE}
 # Pick only the unique entries in a column
@@ -379,10 +392,10 @@ gene_loc %>%
 # arrange(Chr, -Length) # to reverse sort by 'numeric' Length
 ```
 
-
 ## Group_by & Summarize
-- `summarize`: *Reduces multiple values down to a single value*
-- `group_by`: *Combine entries by one or more variables*
+
+-   `summarize`: *Reduces multiple values down to a single value*
+-   `group_by`: *Combine entries by one or more variables*
 
 ```{r summarize, eval=TRUE, echo=TRUE}
 # Combine by a variable, then calculate summary statistics for each group
@@ -418,14 +431,15 @@ gene_loc %>%
 ```
 
 ### More data wrangling
+
 Let's combine everything from above to tidy the full GSE69360 dataset.
 
 Dataset details:
 
-- AA: Agilent Adult; AF: Agilent Fetus
-- BA: BioChain Adult; BF: BioChain Fetus
-- OA: OriGene Adult
-- Tissues: Colon, Heart, Kidney, Liver, Lung, Stomach
+-   AA: Agilent Adult; AF: Agilent Fetus
+-   BA: BioChain Adult; BF: BioChain Fetus
+-   OA: OriGene Adult
+-   Tissues: Colon, Heart, Kidney, Liver, Lung, Stomach
 
 ```{r more-wrangling, echo=TRUE, eval=TRUE}
 # Extracting just the expression values & cleaning it up
@@ -465,21 +479,24 @@ gene_logcpm %>%
   theme_minimal()
 ```
 
-***
+------------------------------------------------------------------------
+
 # Part 4: Visualizing tidy data w/ `ggplot`
+
 ## Basics of ggplot2
+
 **Creating a plot w/ Grammar of Graphics**
 
-> 1. Recap and continuation of **dplyr**
-> 2. Basics of plotting data with **ggplot2**: `data`, `aes`, `geom`
-> 3. Customization: Colors, labels, and legends
-
+> 1.  Recap and continuation of **dplyr**
+> 2.  Basics of plotting data with **ggplot2**: `data`, `aes`, `geom`
+> 3.  Customization: Colors, labels, and legends
 
 ### Barplots & Histograms
-- `ggplot`, `factor`, `aes`
-- `geom_bar`, `geom_histogram`
-- `facet_wrap`
-- `scale_x_log10`, `labs`, `coord_flip`, `theme`, `theme_minimal`
+
+-   `ggplot`, `factor`, `aes`
+-   `geom_bar`, `geom_histogram`
+-   `facet_wrap`
+-   `scale_x_log10`, `labs`, `coord_flip`, `theme`, `theme_minimal`
 
 ```{r ggplot-bars-hist, echo=T, eval=T}
 gene_loc %>%                                                      # data
@@ -528,11 +545,11 @@ plot_chr_genelength +
 
 ```
 
-
 ### Scatter plots
-- `geom_point`
-- `geom_abline`, `geom_vline`, `geom_hline`
-- `geom_smooth`, `geom_text_repel`
+
+-   `geom_point`
+-   `geom_abline`, `geom_vline`, `geom_hline`
+-   `geom_smooth`, `geom_text_repel`
 
 ```{r ggplot-scatter, echo=TRUE, eval=TRUE}
 
@@ -580,8 +597,9 @@ gene_loc %>%
 ```
 
 ### Boxplots & Violin plots
-- `geom_boxplot`, `geom_violin`
-- `scale_y_continuous`
+
+-   `geom_boxplot`, `geom_violin`
+-   `scale_y_continuous`
 
 ```{r echo=TRUE, eval=TRUE}
 gene_logcpm %>%
@@ -618,8 +636,8 @@ plot_ffcolon_scatter <- gene_logcpm %>%
 plot_ffcolon_scatter
 ```
 
-
 ### Some data sleuthing
+
 ```{r echo=TRUE, eval=TRUE}
 # Finding genes with high variance across samples
 num_totgenes <- gene_logcpm %>%
@@ -654,10 +672,14 @@ plot_chry_highvar_boxplot <- gene_logcpm %>%
 plot_chry_highvar_boxplot
 ```
 
-***
+------------------------------------------------------------------------
+
 # Part 5: Export & Wrap-up w/ `RMarkdown`
+
 ## Saving your plots
+
 ### ggsave
+
 **Save a ggplot (or other grid object) with sensible defaults**
 
 ```{r ggsave, eval=T, echo=TRUE}
@@ -678,7 +700,9 @@ ggsave(filename=plot1,
 ```
 
 ## Saving your data files
+
 ### write_delim
+
 **Write a dataframe to a delimited file**
 
 ```{r write_delim, eval=F, echo=TRUE}
@@ -713,100 +737,106 @@ write_delim(x=my_newly_formatted_data,
 ## *What you learnt today!*
 
 ::: l-body-outset
-| Option      | Description                                        |
-|-------------|----------------------------------------------------|
-|**Part 1** | **Getting Started**                                      |
-| `install.packages`| Download and install packages from CRAN-like repositories or from local files |
-| `library`   | Library and require load and attach add-on packages|
-| `package::function`| To run a function w/o loading the package   |
-|*Import* | `tidyverse` > `readr` & `readxl`                                     |
-| `read_delim`| Read a delimited file (incl csv, tsv) into a tibble|
-| `read_csv, read_tsv`  | read_csv() and read_tsv() are special cases of the general read_delim()|
-| `read_excel`| Read xls and xlsx files                            |
-| `here`| Part of `here` package. To set paths relative to your current project directory  |
-|*Data snapshot*                                                |
-| `str`       | Compactly Display the Structure of an Arbitrary R Object|
-| `head`      | Return the First or Last Part of an Object         |
-| `glimpse`   | Get a glimpse of your data                         |
-| `View`      | Invoke a Data Viewer (pop-up, requires XQuartz/X11)       |
-| `kable`     | Create tables in LaTeX, HTML, Markdown and reStructuredText |
-| `paged_table`| Create a table in HTML with support for paging rows and columns|
-|**Part 2** | `tidyverse` > `tidyr`                                   |
-| `pivot_longer`    | Gather Columns Into Key-Value Pairs (COLS -> ROWS) |
-| `pivot_wider`    | Spread a key-value pair across multiple columns    |
-| `separate`  | Separate one column into multiple column           |
-| `unite`     | Unite multiple columns into one                    |
-|**Part 3** | `tidyverse` > `dplyr`                                       |
-| `filter`    | Return rows with matching conditions               |
-| `select`    | Select/rename variables by name                    |
-| `mutate`    | Add new variables                                  |
-| `transmute` | Add new variables & drops existing variables       |
-| `distinct`  | Get unique entries                                 |
-| `arrange`   | Arrange rows by variables                          |
-| `summarise` | Reduces multiple values down to a single value     |
-| `group_by`  | Group by one or more variables                     |
-| `join`      | Join two dataframes together: `left_join`, `right_join`, `inner_join`|
-| `bind`      | Efficiently bind multiple dataframes by row and column: `bind_rows`, `bind_cols`|
-| `setops`    | Set operations: `intersect`, `union`, `setdiff`, `setequal`|
-|**Part 4** | `tidyverse` > `ggplot`                                   |
-| `ggplot`    | Create a new ggplot                                |
-|*Aesthetics*|
-| `aes`| Specify details on what to plot                            |
-| `factor`| Specify a variable to be ordered & categorical          |
-| `facet_wrap`| Split into multiple sub-plots based on a categorical variable |
-|*Geometries*|
-| `geom_bar`| Create a barplot                                |
-| `geom_histogram`| Create a histogram                                |
-| `geom_point`| Create a scatter plot                                |
-| `geom_boxplot`| Create a boxplot                                |
-| `geom_violin`| Create a violin plot                                |
-| `geom_abline, geom_hline, geom_vline`| Add slanted, horizontal, or vertical lines |
-| `geom_smooth`| Add a smooth curve that fits the data points                       |
-|*Plot customization*|
-| `theme, theme_minimal, theme_bw`| Adjust themes to minimal, black/white, etc |
-| `scale_x_log10`| Change x/y axes to log scale                    |
-| `scale_y_continuous`| Change x/y axes to continuous & set limits |
-| `coord_flip`| Flip x & y coordinates                                |
-| `labs`| Specify axes labels and plot titles                          |
-|**Part 5** | **Export & Wrap-up**                                     |
-|*Export* | `tidyverse` > `readr`                                            |
-| `ggsave`    | Save a ggplot (or other grid object) with sensible defaults|
-| `write_delim`| Write a dataframe to a delimited file            |
-| `write_tsv` | write_delim customized for tab-separated values    |
-| `write_csv` | write_delim customized for comma-separated values  |
+| Option                                | Description                                                                      |
+|-----------------|-------------------------------------------------------|
+| **Part 1**                            | **Getting Started**                                                              |
+| `install.packages`                    | Download and install packages from CRAN-like repositories or from local files    |
+| `library`                             | Library and require load and attach add-on packages                              |
+| `package::function`                   | To run a function w/o loading the package                                        |
+| *Import*                              | `tidyverse` \> `readr` & `readxl`                                                |
+| `read_delim`                          | Read a delimited file (incl csv, tsv) into a tibble                              |
+| `read_csv, read_tsv`                  | read_csv() and read_tsv() are special cases of the general read_delim()          |
+| `read_excel`                          | Read xls and xlsx files                                                          |
+| `here`                                | Part of `here` package. To set paths relative to your current project directory  |
+| *Data snapshot*                       |                                                                                  |
+| `str`                                 | Compactly Display the Structure of an Arbitrary R Object                         |
+| `head`                                | Return the First or Last Part of an Object                                       |
+| `glimpse`                             | Get a glimpse of your data                                                       |
+| `View`                                | Invoke a Data Viewer (pop-up, requires XQuartz/X11)                              |
+| `kable`                               | Create tables in LaTeX, HTML, Markdown and reStructuredText                      |
+| `paged_table`                         | Create a table in HTML with support for paging rows and columns                  |
+| **Part 2**                            | `tidyverse` \> `tidyr`                                                           |
+| `pivot_longer`                        | Gather Columns Into Key-Value Pairs (COLS -\> ROWS)                              |
+| `pivot_wider`                         | Spread a key-value pair across multiple columns                                  |
+| `separate`                            | Separate one column into multiple column                                         |
+| `unite`                               | Unite multiple columns into one                                                  |
+| **Part 3**                            | `tidyverse` \> `dplyr`                                                           |
+| `filter`                              | Return rows with matching conditions                                             |
+| `select`                              | Select/rename variables by name                                                  |
+| `mutate`                              | Add new variables                                                                |
+| `transmute`                           | Add new variables & drops existing variables                                     |
+| `distinct`                            | Get unique entries                                                               |
+| `arrange`                             | Arrange rows by variables                                                        |
+| `summarise`                           | Reduces multiple values down to a single value                                   |
+| `group_by`                            | Group by one or more variables                                                   |
+| `join`                                | Join two dataframes together: `left_join`, `right_join`, `inner_join`            |
+| `bind`                                | Efficiently bind multiple dataframes by row and column: `bind_rows`, `bind_cols` |
+| `setops`                              | Set operations: `intersect`, `union`, `setdiff`, `setequal`                      |
+| **Part 4**                            | `tidyverse` \> `ggplot`                                                          |
+| `ggplot`                              | Create a new ggplot                                                              |
+| *Aesthetics*                          |                                                                                  |
+| `aes`                                 | Specify details on what to plot                                                  |
+| `factor`                              | Specify a variable to be ordered & categorical                                   |
+| `facet_wrap`                          | Split into multiple sub-plots based on a categorical variable                    |
+| *Geometries*                          |                                                                                  |
+| `geom_bar`                            | Create a barplot                                                                 |
+| `geom_histogram`                      | Create a histogram                                                               |
+| `geom_point`                          | Create a scatter plot                                                            |
+| `geom_boxplot`                        | Create a boxplot                                                                 |
+| `geom_violin`                         | Create a violin plot                                                             |
+| `geom_abline, geom_hline, geom_vline` | Add slanted, horizontal, or vertical lines                                       |
+| `geom_smooth`                         | Add a smooth curve that fits the data points                                     |
+| *Plot customization*                  |                                                                                  |
+| `theme, theme_minimal, theme_bw`      | Adjust themes to minimal, black/white, etc                                       |
+| `scale_x_log10`                       | Change x/y axes to log scale                                                     |
+| `scale_y_continuous`                  | Change x/y axes to continuous & set limits                                       |
+| `coord_flip`                          | Flip x & y coordinates                                                           |
+| `labs`                                | Specify axes labels and plot titles                                              |
+| **Part 5**                            | **Export & Wrap-up**                                                             |
+| *Export*                              | `tidyverse` \> `readr`                                                           |
+| `ggsave`                              | Save a ggplot (or other grid object) with sensible defaults                      |
+| `write_delim`                         | Write a dataframe to a delimited file                                            |
+| `write_tsv`                           | write_delim customized for tab-separated values                                  |
+| `write_csv`                           | write_delim customized for comma-separated values                                |
 :::
 
-***
+------------------------------------------------------------------------
 
 ## Credits
+
 [Arjun Krishnan](https://thekrishnanlab.org) and [I](https://jravilab.github.io) co-developed the content for this workshop.
 
 ### Acknowledgements
-- [Krishnan Lab](https://thekrishnanlab.org) | [JRaviLab](https://jravilab.github.io)
-- [R-Ladies East Lansing](https://rladies-eastlansing.github.io)
-- Hosts: [R-Ladies Chennai](https://meetup.com/rladies-chennai) | [R-Ladies Bangalore](https://meetup.com/rladies-bangalore) | [R-Ladies Tunis](https://meetup.com/rladies-tunis) | [MSU](https://msu.edu) | [ISCB Academy](https://www.iscb.org/iscbacademy)
+
+-   [Krishnan Lab](https://thekrishnanlab.org) \| [JRaviLab](https://jravilab.github.io)
+-   [R-Ladies East Lansing](https://rladies-eastlansing.github.io)
+-   Hosts: [R-Ladies Chennai](https://meetup.com/rladies-chennai) \| [R-Ladies Bangalore](https://meetup.com/rladies-bangalore) \| [R-Ladies Tunis](https://meetup.com/rladies-tunis) \| [MSU](https://msu.edu) \| [ISCB Academy](https://www.iscb.org/iscbacademy)
 
 ### Contact
-- Webpage: [jravilab.github.io](https://jravilab.github.io) | [thekrishnanlab.org](https://thekrishnanlab.org)
-- Email: <janani@msu.edu> | <arjun@msu.edu>
-- Twitter: [\@janani137](https://twitter.com/janani137) | [\@compbiologist](https://twitter.com/compbiologist)
-- GitHub: [\@jananiravi](https://github.com/jananiravi) | [\@arjunkrish](https://github.com/arjunkrish)
+
+-   Webpage: [jravilab.github.io](https://jravilab.github.io) \| [thekrishnanlab.org](https://thekrishnanlab.org)
+-   Email: [janani\@msu.edu](mailto:janani@msu.edu){.email} \| [arjun\@msu.edu](mailto:arjun@msu.edu){.email}
+-   Twitter: [\@janani137](https://twitter.com/janani137) \| [\@compbiologist](https://twitter.com/compbiologist)
+-   GitHub: [\@jananiravi](https://github.com/jananiravi) \| [\@arjunkrish](https://github.com/arjunkrish)
 
 ## Additional resources {#refs}
-- You can access all relevant material pertaining to this workshop [here](https://github.com/rladies-aurora/202503-RIntro-DataWrangling-Transcriptomics).
-- Other related [R-Ladies Aurora workshops](https://github.com/rladies-aurora) & useful [cheatsheets](https://github.com/rladies-aurora/cheatsheets).
-- [Computational biology gists](https://github.com/jananiravi/compbio-gists)
-- [Data-to-viz.com](https://www.data-to-viz.com) and [R Graph Gallery](https://r-graph-gallery.com)
+
+-   You can access all relevant material pertaining to this workshop [here](https://github.com/rladies-aurora/202503-RIntro-DataWrangling-Transcriptomics).
+-   Other related [R-Ladies Aurora workshops](https://github.com/rladies-aurora) & useful [cheatsheets](https://github.com/rladies-aurora/cheatsheets).
+-   [Computational biology gists](https://github.com/jananiravi/compbio-gists)
+-   [Data-to-viz.com](https://www.data-to-viz.com) and [R Graph Gallery](https://r-graph-gallery.com)
 
 ### Some awesome open-source books
-- Hands-On Programming with R: Grolemund #HOPR https://rstudio-education.github.io/hopr
-- R for Data Science: Wickham & Grolemund #R4DS https://r4ds.had.co.nz
-- R Programming for Data Science: Peng https://leanpub.com/rprogramming
-- Learning Statistics with R: Navarro https://learningstatisticswithr.com/book
+
+-   Hands-On Programming with R: Grolemund #HOPR <https://rstudio-education.github.io/hopr>
+-   R for Data Science: Wickham & Grolemund #R4DS <https://r4ds.had.co.nz>
+-   R Programming for Data Science: Peng <https://leanpub.com/rprogramming>
+-   Learning Statistics with R: Navarro <https://learningstatisticswithr.com/book>
 
 ### Other helpful links
-- #TidyTuesday challenges | On [GitHub](https://github.com/rfordatascience/tidytuesday), [Twitter](https://twitter.com/search?q=%23TidyTuesday&src=typeahead_click).
-- gganimate: [thomasp85/gganimate](https://github.com/thomasp85/gganimate)
-- tidyexplain: [gadenbuie/tidyexplain](https://github.com/gadenbuie/tidyexplain)
-- Distill (theme for RMarkdown): https://rstudio.github.io/distill
-- Google & [StackOverflow](https://stackoverflow.com) are your best friends!
+
+-   #TidyTuesday challenges \| On [GitHub](https://github.com/rfordatascience/tidytuesday), [Twitter](https://twitter.com/search?q=%23TidyTuesday&src=typeahead_click).
+-   gganimate: [thomasp85/gganimate](https://github.com/thomasp85/gganimate)
+-   tidyexplain: [gadenbuie/tidyexplain](https://github.com/gadenbuie/tidyexplain)
+-   Distill (theme for RMarkdown): <https://rstudio.github.io/distill>
+-   Google & [StackOverflow](https://stackoverflow.com) are your best friends!
